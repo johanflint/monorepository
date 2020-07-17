@@ -1,3 +1,3 @@
 println("Hello world")
 // yeah
-// go2
+// go
