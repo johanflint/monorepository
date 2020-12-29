@@ -6,3 +6,4 @@ dir("monorepository") {
     log("Git: $x")
 }
 
+log("Hi")
