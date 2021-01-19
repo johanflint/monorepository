@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ${trigger.deployment.name}
+  namespace: makersplatform
+  labels:
+    app: ${trigger.deployment.name}
+    app.kubernetes.io/name: ${trigger.deployment.name}
+    app.kubernetes.io/instance: ${trigger.deployment.name}${instanceSuffix}
+    app.kubernetes.io/version: ${trigger.deployment.version}
+    app.kubernetes.io/component: ${trigger.deployment.component}
+    app.kubernetes.io/part-of: ${trigger.deployment.partOf}
+    app.kubernetes.io/managed-by: spinnaker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ${trigger.deployment.name}
+  template:
+    metadata:
+      labels:
+        app: ${trigger.deployment.name}
+        app.kubernetes.io/name: ${trigger.deployment.name}
+        app.kubernetes.io/instance: ${trigger.deployment.name}${instanceSuffix}
+        app.kubernetes.io/version: ${trigger.deployment.version}
+        app.kubernetes.io/component: ${trigger.deployment.component}
+        app.kubernetes.io/part-of: ${trigger.deployment.partOf}
+        app.kubernetes.io/managed-by: spinnaker
+    spec:
+      containers:
+        - name: ${trigger.deployment.name}
+          image: ${trigger.deployment.image}

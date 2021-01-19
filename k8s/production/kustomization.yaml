@@ -1,0 +1,8 @@
+bases:
+  - ../base
+
+namespace: makersplatform
+nameSuffix: -prod
+commonLabels:
+  environment: production
+  app.kubernetes.io/managed-by: spinnaker
