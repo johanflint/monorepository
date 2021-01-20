@@ -6,7 +6,7 @@ metadata:
   labels:
     app: ${deployment.name}
     app.kubernetes.io/name: ${deployment.name}
-    app.kubernetes.io/instance: ${deployment.name + deployment.instanceSuffix}
+    app.kubernetes.io/inxstance: ${deployment.name + deployment.instanceSuffix}
     app.kubernetes.io/version: ${deployment.version}
     app.kubernetes.io/component: ${deployment.component}
     app.kubernetes.io/part-of: ${deployment.partOf}
@@ -21,7 +21,7 @@ spec:
       labels:
         app: ${deployment.name}
         app.kubernetes.io/name: ${deployment.name}
-        app.kubernetes.io/instance: ${deployment.name}${instanceSuffix}
+        app.kubernetes.io/inxstance: ${deployment.name + deployment.instanceSuffix}
         app.kubernetes.io/version: ${deployment.version}
         app.kubernetes.io/component: ${deployment.component}
         app.kubernetes.io/part-of: ${deployment.partOf}
